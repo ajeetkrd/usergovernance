@@ -1,0 +1,24 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/app.ts",
+  "watch": {
+    "include": ["**"],
+    "exclude": ["README.md", "cdk*.json", "**/*.d.ts", "**/*.js", "tsconfig.json", "package*.json", "node_modules"]
+  },
+  "context": {
+    "@aws-cdk/aws-iam:minimizePolicies": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "@aws-cdk/core:target-partitions": ["aws", "aws-cn"],
+
+    "usageTableName": "BedrockModelUsageTrackerStack-UsageTable28300137-OCVCLTHG4BLE",
+    "usageTableRegion": "ap-south-1",
+    "budgetUsd": "0.1",
+    "identityStoreId": "d-9066174cc7",
+    "identityCenterRegion": "us-east-1",
+    "groupName": "claude",
+    "scheduleExpression": "rate(1 hour)",
+    "enableSchedule": "true",
+    "dryRun": "false",
+    "unknownModelPolicy": "warn",
+    "pricingOverrides": "{}"
+  }
+}
